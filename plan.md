@@ -1,6 +1,6 @@
 # Basic Idea
 
-The intended use is that a `what.toml` with all of the file and dir metadata (for now just strings describing the contents) will be placed in the root dir of the project. Then, when `what` is called on a file it will look in the current directory for a `what.toml`, then keep going up until it (either runs out of files to looks at, or hits `home\`?). If it finds a `what.toml` it will check to see if it has the relevant information inside. If it does, it will give the user the relevant information. 
+The intended use is that a `what.toml` with all of the file and dir metadata (for now just strings describing the contents) will be placed in the root dir of the project. Then, when `what` is called on a file it will look in the current directory for a `what.toml`, then keep going up until it (either runs out of files to looks at, or hits `home/`?). If it finds a `what.toml` it will check to see if it has the relevant information inside. If it does, it will give the user the relevant information. 
 
 ## MVP Features
 
@@ -10,8 +10,16 @@ The intended use is that a `what.toml` with all of the file and dir metadata (fo
 
 ## what --recursive (-r)
 
-This could be called so that one could get information about a dir, every file and dir in that dir, all dirs in those dirs... etc.
+This could be called so that one could get information about a dir, every file and dir in that dir, all dirs in those dirs... etc. Could just be `*/*`
 
 ## what global
 
-A .toml that is hit after the initial search fails, can contain info about files in `\` like `dev`, `lib32` etc.
+A .toml that is hit after the initial search fails, can contain info about files in `/` like `dev/`, `lib32/` etc.
+
+## what Have You Done?
+
+Prompt user to check that the description is still correct if they commit changes... seems kind of annoying, shouldn't be default. Prompt user to add a description for created files. 
+
+## what Should You Do?
+
+Create an initial blank `what.toml` to be filled out.
